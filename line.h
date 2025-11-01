@@ -5,23 +5,23 @@
 #include "base_station.h"
 #include "span.h"
 
-class Line { // линия 
+class Line { // линия
 public:
     Line(int lineNumber, const std::string& name, bool isCircular = false) // фолс дефолтный
         : lineNumber_(lineNumber), name_(name), isCircular_(isCircular) {}
 
     void AddStation(BaseStation* station) { // заполняем линию станциями
-        stations_.push_back(station); 
+        stations_.push_back(station);
     }
 
     void AddSpan(BaseStation* station1, BaseStation* station2, int travelTime) { // и перегонами
-        spans_.push_back(Span(station1, station2, travelTime)); 
+        spans_.push_back(Span(station1, station2, travelTime));
     }
 
     std::vector<std::pair<BaseStation*, int> > GetNeighbors(BaseStation* station) { // ищем соседей для станции
         std::vector<std::pair<BaseStation*, int> > neighbors;
 
-        auto it = stationIndices_.find(station);
+        std::map<BaseStation*, int>::iterator it = stationIndices_.find(station);
         if (it == stationIndices_.end()) return neighbors; // нет такого элемента
 
         int index = it->second; // индекс на линии
@@ -34,7 +34,7 @@ public:
             neighbors.push_back(std::make_pair(stations_.back(), travelTime));
         }
 
-        if (index < stations_.size() - 1) { // для не последней станции на линии правый сосед
+        if (index < static_cast<int>(stations_.size()) - 1) { // для не последней станции на линии правый сосед
             int travelTime = GetTravelTimeBetween(station, stations_[index + 1]);
             neighbors.push_back(std::make_pair(stations_[index + 1], travelTime));
         } else if (isCircular_) {
@@ -46,8 +46,8 @@ public:
     }
 
     int GetTravelTime(BaseStation* from, BaseStation* to) { // время в пути
-        auto fromIt = stationIndices_.find(from);
-        auto toIt = stationIndices_.find(to);
+        std::map<BaseStation*, int>::iterator fromIt = stationIndices_.find(from);
+        std::map<BaseStation*, int>::iterator toIt = stationIndices_.find(to);
 
         if (fromIt == stationIndices_.end() || toIt == stationIndices_.end())
             return -1;
@@ -65,7 +65,7 @@ public:
 
         if (isCircular_) {
             int circlePath = 0;
-            for (int i = max_idx; i < stations_.size() - 1; ++i) {
+            for (int i = max_idx; i < static_cast<int>(stations_.size()) - 1; ++i) {
                 circlePath += GetTravelTimeBetween(stations_[i], stations_[i + 1]);
             }
             circlePath += GetTravelTimeBetween(stations_.back(), stations_.front());
@@ -79,6 +79,16 @@ public:
         return directPath;
     }
 
+    // Геттеры для доступа к приватным полям
+    int GetLineNumber() const { return lineNumber_; }
+    const std::string& GetName() const { return name_; }
+    bool IsCircular() const { return isCircular_; }
+    const std::vector<BaseStation*>& GetStations() const { return stations_; }
+    std::vector<BaseStation*>& GetStations() { return stations_; }
+    std::map<BaseStation*, int>& GetStationIndices() { return stationIndices_; }
+    const std::map<BaseStation*, int>& GetStationIndices() const { return stationIndices_; }
+
+private:
     int lineNumber_; // возможно, надо было сделать прайват, но я об этом подумаю после написания класса metro
     std::string name_;
     bool isCircular_;
@@ -87,10 +97,10 @@ public:
     std::map<BaseStation*, int> stationIndices_;
 
     int GetTravelTimeBetween(BaseStation* station1, BaseStation* station2) { // время в пути между соседними станциями
-        for (auto span : spans_) {
-            if ((span.station1_ == station1 && span.station2_ == station2) ||
-                (span.station1_ == station2 && span.station2_ == station1)) {
-                return span.travelTime_;
+        for (size_t i = 0; i < spans_.size(); ++i) {
+            if ((spans_[i].GetStation1() == station1 && spans_[i].GetStation2() == station2) ||
+                (spans_[i].GetStation1() == station2 && spans_[i].GetStation2() == station1)) {
+                return spans_[i].GetTravelTime();
             }
         }
         return -1;

@@ -17,7 +17,7 @@ public:
     int GetLineNumber() const { return lineNumber_; }
     int GetStationNumber() const { return number_; }
 
-    void SetLineNumber (int linenumber) { // добавила эти две функции, чтобы осознанно менять значения параметров 
+    void SetLineNumber (int linenumber) { // добавила эти две функции, чтобы осознанно менять значения параметров
         lineNumber_ = linenumber;
     }
     void SetNumber (int number) { // имя и номер станции предположительно не меняются поэтому без них
@@ -26,7 +26,7 @@ public:
 
     void SetAverageTraffic(int traffic) { averageTraffic_ = traffic; }
 
-    private:
+private:
     std::string name_;
     int averageTraffic_;
     int lineNumber_;
@@ -34,4 +34,5 @@ public:
 
     static int counter_;
 };
+
 int BaseStation::counter_ = 0;

@@ -20,5 +20,10 @@ public:
         return lines_;
     }
 
+    const std::vector<std::pair<int, int> >& GetLines() const {
+        return lines_;
+    }
+
+private:
     std::vector<std::pair<int, int> > lines_; // набор номеров линий и станций, на которых базируется станция (возможно, надо было сделать прайват)
 };
