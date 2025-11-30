@@ -31,6 +31,10 @@ class Metro {
 public:
     Metro() {}
 
+    void AddStationToLine(Line* line, BaseStation* station) {
+        stationToLines_[station].push_back(line);
+    }
+
     void AddLine(Line* line) {
         lines_.push_back(line);
 
@@ -133,7 +137,7 @@ private:
 
     std::vector<std::pair<BaseStation*, int> > GetAllNeighbors(BaseStation* station) {
         std::vector<std::pair<BaseStation*, int> > allNeighbors;
-
+        
         // соседние вершины на той же линии
         std::map<BaseStation*, std::vector<Line*> >::iterator it = stationToLines_.find(station);
         if (it != stationToLines_.end()) {

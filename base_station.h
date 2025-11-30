@@ -34,5 +34,3 @@ private:
 
     static int counter_;
 };
-
-int BaseStation::counter_ = 0;
