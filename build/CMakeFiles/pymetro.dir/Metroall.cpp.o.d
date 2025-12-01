@@ -1,6 +1,6 @@
 CMakeFiles/pymetro.dir/metroall.cpp.o: \
-  /Users/aleksandrgubarev/Underground/metroall.cpp \
-  /Users/aleksandrgubarev/Underground/metroall.h \
+  /Users/evelaveta/Desktop/Programming/term5/Underground/metroall.cpp \
+  /Users/evelaveta/Desktop/Programming/term5/Underground/metroall.h \
   /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/string \
   /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/__algorithm/max.h \
   /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/__algorithm/comp.h \
@@ -930,20 +930,20 @@ CMakeFiles/pymetro.dir/metroall.cpp.o: \
   /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/__functional/pointer_to_binary_function.h \
   /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/__functional/pointer_to_unary_function.h \
   /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/__functional/unary_negate.h \
-  /Users/aleksandrgubarev/Underground/metro.h \
+  /Users/evelaveta/Desktop/Programming/term5/Underground/metro.h \
   /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/queue \
   /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/deque \
   /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/set \
-  /Users/aleksandrgubarev/Underground/line.h \
-  /Users/aleksandrgubarev/Underground/base_station.h \
+  /Users/evelaveta/Desktop/Programming/term5/Underground/line.h \
+  /Users/evelaveta/Desktop/Programming/term5/Underground/base_station.h \
   /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/cassert \
   /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/assert.h \
   /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/_assert.h \
   /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/_static_assert.h \
-  /Users/aleksandrgubarev/Underground/span.h \
-  /Users/aleksandrgubarev/Underground/transfer_station.h \
-  /Users/aleksandrgubarev/Underground/usual_station.h \
-  /Users/aleksandrgubarev/Underground/cross_platform_station.h \
+  /Users/evelaveta/Desktop/Programming/term5/Underground/span.h \
+  /Users/evelaveta/Desktop/Programming/term5/Underground/transfer_station.h \
+  /Users/evelaveta/Desktop/Programming/term5/Underground/usual_station.h \
+  /Users/evelaveta/Desktop/Programming/term5/Underground/cross_platform_station.h \
   /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/iostream \
   /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/istream \
   /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/ostream \

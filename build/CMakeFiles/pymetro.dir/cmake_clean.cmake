@@ -5,7 +5,7 @@ file(REMOVE_RECURSE
   "CMakeFiles/pymetro.dir/metro_pybind.cpp.o.d"
   "CMakeFiles/pymetro.dir/metroall.cpp.o"
   "CMakeFiles/pymetro.dir/metroall.cpp.o.d"
-  "pymetro.cpython-313-darwin.so"
+  "pymetro.cpython-311-darwin.so"
   "pymetro.pdb"
 )
 

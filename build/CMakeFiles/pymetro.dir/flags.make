@@ -4,7 +4,7 @@
 # compile CXX with /usr/bin/c++
 CXX_DEFINES = -Dpymetro_EXPORTS
 
-CXX_INCLUDES = -isystem /opt/homebrew/include -isystem /Library/Frameworks/Python.framework/Versions/3.13/include/python3.13
+CXX_INCLUDES = -isystem /opt/homebrew/include -isystem /Library/Frameworks/Python.framework/Versions/3.11/include/python3.11
 
 CXX_FLAGSarm64 = -std=gnu++17 -arch arm64 -fPIC -fvisibility=hidden -flto
 

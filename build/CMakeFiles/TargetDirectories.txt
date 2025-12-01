@@ -1,3 +1,3 @@
-/Users/aleksandrgubarev/Underground/build/CMakeFiles/pymetro.dir
-/Users/aleksandrgubarev/Underground/build/CMakeFiles/edit_cache.dir
-/Users/aleksandrgubarev/Underground/build/CMakeFiles/rebuild_cache.dir
+/Users/evelaveta/Desktop/Programming/term5/Underground/build/CMakeFiles/pymetro.dir
+/Users/evelaveta/Desktop/Programming/term5/Underground/build/CMakeFiles/edit_cache.dir
+/Users/evelaveta/Desktop/Programming/term5/Underground/build/CMakeFiles/rebuild_cache.dir
