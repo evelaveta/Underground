@@ -52,13 +52,29 @@ void MetroAll::addTransfer(const std::string& from, const std::string& to, int t
 std::pair<std::vector<std::string>, int>
 MetroAll::shortestRoute(const std::string& from, const std::string& to)
 {
-    Route route = metro.FindShortestRoute(stations[from], stations[to]);
+    try {
+        if (stations.find(from) == stations.end()) {
+            throw std::runtime_error("Станция '" + from + "' не найдена");
+        }
+        
+        if (stations.find(to) == stations.end()) {
+            throw std::runtime_error("Станция '" + to + "' не найдена");
+        }
 
-    std::vector<std::string> names;
-    names.reserve(route.stations.size());
+        if (from == to) {
+            throw std::runtime_error("Начальная и конечная станции совпадают");
+        }
+        
+        Route route = metro.FindShortestRoute(stations[from], stations[to]);
 
-    for (auto* s : route.stations)
-        names.push_back(s->GetName());
+        std::vector<std::string> names;
 
-    return {names, route.totalTime};
+        for (auto* s : route.stations)
+            names.push_back(s->GetName());
+
+        return {names, route.totalTime};
+        
+    } catch (const std::exception& e) {
+        throw std::runtime_error(std::string("Ошибка поиска маршрута: ") + e.what());
+    }
 }
